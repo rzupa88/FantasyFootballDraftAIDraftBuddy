@@ -1,0 +1,83 @@
+<div class="p-6">
+    <h2 class="text-3xl font-bold text-blue-600">Live Draft</h2>
+    <p class="mt-4 text-lg text-gray-700">Track and manage real-time picks during your draft!</p>
+  
+    <!-- Draft Board -->
+    <div class="mt-6">
+      <h3 class="text-2xl font-bold text-gray-800">Draft Board</h3>
+      <table class="w-full mt-4 border border-gray-300">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="p-2 border">Team Name</th>
+            <th class="p-2 border">Player Name</th>
+            <th class="p-2 border">Position</th>
+            <th class="p-2 border">Bye Week</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2 border">Team 1</td>
+            <td class="p-2 border">Patrick Mahomes</td>
+            <td class="p-2 border">QB</td>
+            <td class="p-2 border">10</td>
+          </tr>
+          <tr>
+            <td class="p-2 border">Team 2</td>
+            <td class="p-2 border">Christian McCaffrey</td>
+            <td class="p-2 border">RB</td>
+            <td class="p-2 border">13</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Available Players -->
+    <div class="mt-8">
+      <h3 class="text-2xl font-bold text-gray-800">Available Players</h3>
+      <input
+        type="text"
+        placeholder="Search players..."
+        class="border p-2 w-full mt-2"
+      />
+      <table class="w-full mt-4 border border-gray-300">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="p-2 border">Player Name</th>
+            <th class="p-2 border">Position</th>
+            <th class="p-2 border">Team</th>
+            <th class="p-2 border">Bye Week</th>
+            <th class="p-2 border">Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2 border">Justin Jefferson</td>
+            <td class="p-2 border">WR</td>
+            <td class="p-2 border">MIN</td>
+            <td class="p-2 border">7</td>
+            <td class="p-2 border">1</td>
+          </tr>
+          <tr>
+            <td class="p-2 border">Austin Ekeler</td>
+            <td class="p-2 border">RB</td>
+            <td class="p-2 border">LAC</td>
+            <td class="p-2 border">5</td>
+            <td class="p-2 border">2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Action Buttons -->
+    <div class="mt-8 flex space-x-4">
+      <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+        Add Player to Draft Board
+      </button>
+      <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+        Undo Last Pick
+      </button>
+      <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+        Clear Draft
+      </button>
+    </div>
+  </div>
