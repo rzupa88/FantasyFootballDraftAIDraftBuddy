@@ -1,83 +1,97 @@
-<div class="p-6">
-    <h2 class="text-3xl font-bold text-blue-600">Live Draft</h2>
-    <p class="mt-4 text-lg text-gray-700">Track and manage real-time picks during your draft!</p>
-  
-    <!-- Draft Board -->
-    <div class="mt-6">
-      <h3 class="text-2xl font-bold text-gray-800">Draft Board</h3>
-      <table class="w-full mt-4 border border-gray-300">
-        <thead class="bg-gray-200">
-          <tr>
-            <th class="p-2 border">Team Name</th>
-            <th class="p-2 border">Player Name</th>
-            <th class="p-2 border">Position</th>
-            <th class="p-2 border">Bye Week</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="p-2 border">Team 1</td>
-            <td class="p-2 border">Patrick Mahomes</td>
-            <td class="p-2 border">QB</td>
-            <td class="p-2 border">10</td>
-          </tr>
-          <tr>
-            <td class="p-2 border">Team 2</td>
-            <td class="p-2 border">Christian McCaffrey</td>
-            <td class="p-2 border">RB</td>
-            <td class="p-2 border">13</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <!-- Available Players -->
-    <div class="mt-8">
-      <h3 class="text-2xl font-bold text-gray-800">Available Players</h3>
-      <input
-        type="text"
-        placeholder="Search players..."
-        class="border p-2 w-full mt-2"
-      />
-      <table class="w-full mt-4 border border-gray-300">
-        <thead class="bg-gray-200">
-          <tr>
-            <th class="p-2 border">Player Name</th>
-            <th class="p-2 border">Position</th>
-            <th class="p-2 border">Team</th>
-            <th class="p-2 border">Bye Week</th>
-            <th class="p-2 border">Rank</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="p-2 border">Justin Jefferson</td>
-            <td class="p-2 border">WR</td>
-            <td class="p-2 border">MIN</td>
-            <td class="p-2 border">7</td>
-            <td class="p-2 border">1</td>
-          </tr>
-          <tr>
-            <td class="p-2 border">Austin Ekeler</td>
-            <td class="p-2 border">RB</td>
-            <td class="p-2 border">LAC</td>
-            <td class="p-2 border">5</td>
-            <td class="p-2 border">2</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <!-- Action Buttons -->
-    <div class="mt-8 flex space-x-4">
-      <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-        Add Player to Draft Board
-      </button>
-      <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
-        Undo Last Pick
-      </button>
-      <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-        Clear Draft
-      </button>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Draft</title>
+  <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4">
+    <ul class="flex justify-around text-gray-200">
+      <li><a href="Dashboard.html" class="hover:underline">Home</a></li>
+      <li><a href="LiveDraft.html" class="hover:underline">Live Draft</a></li>
+      <li><a href="MockDraft.html" class="hover:underline">Mock Draft</a></li>
+      <li><a href="#" class="hover:underline">Player Analysis</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="p-6 space-y-8">
+
+    <!-- Draft Board Section -->
+    <section>
+      <h1 class="text-3xl font-bold mb-4">Draft Board</h1>
+      <div class="overflow-x-auto bg-gray-800 rounded-lg shadow-lg">
+        <table id="draftBoard" class="w-full border-collapse">
+          <thead class="bg-gray-700">
+            <tr>
+              <th class="p-4 border text-left">Round</th>
+              <th class="p-4 border text-left">Team 1</th>
+              <th class="p-4 border text-left">Team 2</th>
+              <th class="p-4 border text-left">Team 3</th>
+              <!-- Add more team columns dynamically -->
+            </tr>
+          </thead>
+          <tbody class="bg-gray-900 divide-y divide-gray-700">
+            <!-- Dynamic rows will be added here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Bottom Section -->
+    <section class="flex space-x-6">
+      
+      <!-- Available Players -->
+      <div class="w-2/3 bg-gray-800 rounded-lg shadow-lg p-4">
+        <h2 class="text-2xl font-bold mb-4">Available Players</h2>
+        <div class="overflow-y-auto max-h-96">
+          <table id="playerStats" class="w-full border-collapse">
+            <thead class="bg-gray-700">
+              <tr>
+                <th class="p-4 border text-left">Action</th>
+                <th class="p-4 border text-left">Player</th>
+                <th class="p-4 border text-left">Position</th>
+                <th class="p-4 border text-left">Team</th>
+                <th class="p-4 border text-left">ADP</th>
+                <th class="p-4 border text-left">Bye Week</th>
+              </tr>
+            </thead>
+            <tbody class="bg-gray-900 divide-y divide-gray-700">
+              <!-- Dynamic rows will be added here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Queue / Roster / Chat -->
+      <div class="w-1/3 bg-gray-800 rounded-lg shadow-lg p-4">
+        <h2 class="text-2xl font-bold mb-4">Queue / Roster / Chat</h2>
+        <div class="tabs">
+          <button class="tab-button bg-gray-700 px-4 py-2 rounded hover:bg-gray-600" data-tab="queue">Queue</button>
+          <button class="tab-button bg-gray-700 px-4 py-2 rounded hover:bg-gray-600" data-tab="roster">Roster</button>
+          <button class="tab-button bg-gray-700 px-4 py-2 rounded hover:bg-gray-600" data-tab="chat">Chat</button>
+        </div>
+        <div class="tab-content mt-4">
+          <div id="queue" class="tab-pane">
+            <p>No players in your queue. Add players to queue from the available players list.</p>
+          </div>
+          <div id="roster" class="tab-pane hidden">
+            <p>Your drafted players will appear here.</p>
+          </div>
+          <div id="chat" class="tab-pane hidden">
+            <p>Chat with the AI assistant here for drafting tips and insights.</p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
   </div>
+
+  <script src="LiveDraft.js"></script>
+</body>
+</html>
